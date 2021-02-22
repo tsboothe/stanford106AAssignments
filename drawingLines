@@ -1,0 +1,36 @@
+package week2;
+
+import acm.graphics.*;
+import acm.program.*;
+import acm.program.GraphicsProgram;
+import java.awt.event.*;
+
+public class DrawingLines extends GraphicsProgram {
+
+	public void run() {
+		addLines();
+		addRubberBand();
+	}
+	
+	private void addRubberBand() {		
+	}
+
+	private void addLines() {
+	}
+
+	private GLine line;
+
+	public void pressMouse(MouseEvent e) {
+		double x = e.getX();
+		double y = e.getY();
+		line = new GLine (x, y, x, y);
+		add(line);
+	}
+	
+	public void dragMouse(MouseEvent e) {
+		double x = e.getX();
+		double y = e.getY();
+		line.setEndPoint(x, y);
+	}
+		
+}
