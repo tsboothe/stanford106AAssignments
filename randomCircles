@@ -1,0 +1,26 @@
+package week2;
+
+import acm.graphics.GOval;
+import acm.program.GraphicsProgram;
+import acm.util.RandomGenerator;
+
+public class RandomCircles extends GraphicsProgram {
+	
+	private static final int circles = 10;
+	private static final double minRadius = 5;
+	private static final double maxRadius = 50;
+	
+	public void run() {
+		for (int i = 0; i < circles; i++) {
+			double x = rgen.nextDouble(minRadius, maxRadius);
+			double y = rgen.nextDouble(0, getWidth() - 2 * x);
+			double z = rgen.nextDouble(0, getHeight() - 2 * x);
+			GOval circle = new GOval(y, z, 2 * x, 2 * x);
+			circle.setFilled(true);
+			circle.setColor(rgen.nextColor());
+			add(circle);
+		}
+	}
+	private RandomGenerator rgen = RandomGenerator.getInstance();
+
+}
