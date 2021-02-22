@@ -13,7 +13,7 @@ public class Fibonacci extends ConsoleProgram {
 
 		println("This Program lists the Fibonacci sequence");
 		
-		while (fib1 < MAX_TERM_VALUE) {
+		while (fib1 < 10000) {
 			println(fib1);
 			fib2 = fib1;
 			fib1 = fib3;
@@ -21,5 +21,4 @@ public class Fibonacci extends ConsoleProgram {
 		}
 		
 	}
-	private static final int MAX_TERM_VALUE = 10000;
 }
