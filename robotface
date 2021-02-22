@@ -1,0 +1,60 @@
+package week2;
+import acm.graphics.*;
+import acm.program.*;
+import java.awt.*;
+import java.awt.color.ColorSpace;
+
+import javax.swing.plaf.synth.ColorType;
+
+import acm.graphics.G3DRect;
+import acm.program.GraphicsProgram;
+
+public class RobotFace extends GraphicsProgram {
+
+	private static final int headHeight = 150;
+	private static final int headWidth = 100;
+	private static final int eyeRadius = 10;
+	private static final int mouthWidth = 60;
+	private static final int mouthHeight = 20;
+	
+	public void run() {
+		addFace(getWidth() / 2, getHeight() / 2);
+	
+	}
+	private void addFace(double cx, double cy) {
+		addHead(cx, cy);
+		addEye(cx - headHeight / 4, cy - headHeight / 4);
+		addEye(cx + headWidth / 4, cy - headWidth / 4);
+		addMouth(cx, cy + headHeight / 4);
+	}
+		
+	private void addHead(double cx, double cy) {
+		double x = cx - headWidth / 2;
+		double y = cy - headHeight / 2;
+		G3DRect head = new G3DRect(x, y, headWidth, headHeight);
+		head.setFilled(true);
+		head.setFillColor(ColorSpace.CS_GRAY);
+		add(head);	
+
+	}
+	private void addEye(double cx, double cy) {
+		double x = cx - eyeRadius;
+		double y = cy - eyeRadius;
+		GOval eye = new GOval(x, y, 2 * eyeRadius, 2 * eyeRadius);
+		eye.setFilled(true);
+		eye.setFillColor(ColorSpace.CS_YELLOW);
+		add(eye);	
+	}
+	
+	private void addMouth(double cx, double cy) {
+		double x = cx - mouthWidth / 2;
+		double y = cy - mouthHeight / 2;
+		GRect mouth = new GRect(x, y, mouthWidth, mouthHeight);
+		mouth.setFilled(true);
+		mouth.setFillColor(ColorSpace.CS_WHITE);
+		add(mouth);	
+	
+		
+	  }
+  
+  }
