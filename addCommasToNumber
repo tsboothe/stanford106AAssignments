@@ -26,4 +26,4 @@ public class AddCommasToNumberStrings extends ConsoleProgram {
 			println(addCommasToNumericString(digits));
 		}
 		
-	}
+	} 
