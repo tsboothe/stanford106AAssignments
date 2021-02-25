@@ -1,0 +1,19 @@
+package week3;
+
+import acm.program.ConsoleProgram;
+
+public class DeleteCharactersFromString extends ConsoleProgram {
+	
+	private String removeAllOccurrences (String str, char ch) {
+		String answer = "";
+		for (int i = 0; i <str.length(); i++) {
+			if (str.charAt(i) !=ch) {
+				answer += str.charAt(i);
+			}
+		}
+	}
+	public void run() {
+		return answer;
+	}
+	
+}
