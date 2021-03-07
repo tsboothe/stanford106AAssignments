@@ -1,0 +1,30 @@
+package week4;
+
+import java.util.ArrayList;
+
+import javax.print.DocFlavor.STRING;
+
+import acm.program.ConsoleProgram;
+
+public class UniqueNames extends ConsoArrayList<E> {
+	
+	public void run() {
+		ArrayList<String> list = new ArrayList<string>();
+		while (true) {
+			String name = readLine("Enter name: ");
+			if (name.equals("")) break;
+			if (!list.contains(name)) {
+				list.add(name);
+			}
+		}
+		
+		System.out.println("Unique name list contains:");
+		printList(list);
+	}
+	
+	private void printList(ArrayList list) {
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+	}
+}
